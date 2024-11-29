@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:latest
+    container_name: video_streaming_db
+    environment:
+      POSTGRES_USER: video_streaming_db
+      POSTGRES_PASSWORD: video_streaming_db
+      POSTGRES_DB: video_streaming_db
+    ports:
+      - "5444:5432"
+    volumes:
+      - video_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  video_postgres_data:
